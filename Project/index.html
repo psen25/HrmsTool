@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resource Management System Frontend</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Human Resource Management System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="loadPage('organization')">Organization</a></li>
+            <li><a href="#" onclick="loadPage('employee')">Employee</a></li>
+            <li><a href="#" onclick="loadPage('leave')">Leave</a></li>
+            <li><a href="#" onclick="loadPage('authentication')">Authentication</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+
+    </div>
+
+    <script src="js/organization.js"></script>
+    <script src="js/employee.js"></script>
+    <script src="js/leave.js"></script>
+    <script src="js/authentication.js"></script>
+    <script>
+        
+        function loadPage(page) {
+            document.getElementById('content').innerHTML = '';
+            switch (page) {
+                case 'organization':
+                    loadOrganizationPage();
+                    break;
+                case 'employee':
+                    loadEmployeePage();
+                    break;
+                case 'leave':
+                    loadLeavePage();
+                    break;
+                case 'authentication':
+                    loadAuthenticationPage();
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
